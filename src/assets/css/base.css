@@ -1,0 +1,15 @@
+html, body {
+    margin: 0;
+    font-family: Roboto, sans-serif;
+}
+
+.text-corail {
+    color: #FA7268;
+}
+.bg-corail {
+    background-color: #FA7268;
+}
+
+.text-bluec {
+    color: #232f3e;
+}
