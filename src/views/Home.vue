@@ -1,7 +1,7 @@
 <template>
-  <div v-if="typed" id="home" class="flex flex-col items-center justify-center w-full h-full pt-20" style="min-height: calc(100vh - 20rem); height: calc(100vh - 20rem);">
+  <div v-if="home" id="home" class="flex flex-col items-center justify-center w-full h-full pt-20" style="min-height: calc(100vh - 20rem); height: calc(100vh - 20rem);">
     <transition v-if="typed" enter-active-class="animated fadeIn" leave-active-class="animated bounceOutRight">
-      <vue-typed-js class="text-white text-xl sm:p-0 p-4 text-center" v-if="strings.length > 0" :strings="strings" :loop="false" :contentType="'html'" :typeSpeed="35" :backSpeed="10" :startDelay="1000">
+      <vue-typed-js class="text-white sm:text-xl text-lg sm:p-0 p-4 text-center" v-if="strings.length > 0" :strings="strings" :loop="false" :contentType="'html'" :typeSpeed="35" :backSpeed="10" :startDelay="1000">
         <h2 class="typing"></h2>
       </vue-typed-js>
     </transition>
@@ -14,9 +14,10 @@
     data: function () {
       return {
         typed: false,
+        home: false,
         strings: [
           '<span class=\'text-yellow-500\'>Hello !</span>^300',
-          'Je suis <span class=\'text-corail\'>Gilian</span>^300',
+          'Je suis <span class=\'text-corail\'>Gilian</span> :)^300',
           '<span class=\'text-blue-500\'>Freelance</span> web Fullstack^300',
           'Étudiant et <span class=\'text-orange-500\'>Entrepreneur</span>^300',
           'Basé à <span class=\'text-corail\'>Lyon</span>^200',
@@ -29,6 +30,7 @@
     mounted: function () {
       setTimeout(() => {
         this.$data.typed = true;
+        this.$data.home = true;
       }, 5500);
       setTimeout(() => {
         this.$data.typed = false;
