@@ -1,5 +1,5 @@
 <template>
-  <div class="card flex flex-row self-center justify-center lg:w-1/2 md:w-2/3 sm:w-3/4 w-full my-6">
+  <div class="card flex flex-row self-center justify-center lg:w-1/2 sm:w-5/6 w-full my-6">
     <div class="flex flex-col sm:w-2/3 sm:mx-0 mx-6 h-full bg-white shadow-lg hover:shadow rounded-lg">
       <div class="w-full bg-blue-700 rounded-t-lg p-6">
         <h1 class="text-xl text-white">Conformitee</h1>

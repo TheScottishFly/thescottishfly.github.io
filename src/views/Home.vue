@@ -35,7 +35,7 @@
       setTimeout(() => {
         this.$data.typed = false;
         this.$data.strings = [];
-        }, 42000);
+      }, 42000);
     }
   }
 </script>

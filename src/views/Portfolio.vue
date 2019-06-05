@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col items-center justify-center w-full min-h-screen h-full xl:pt-40 pt-48">
+  <div class="flex flex-col items-center justify-center w-full h-full lg:pt-24 sm:pt-12 pt-4">
     <Card></Card>
   </div>
 </template>
