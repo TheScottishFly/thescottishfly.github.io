@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueTypedJs from 'vue-typed-js';
 import '@/assets/css/base.css';
+import '@/assets/css/tailwind.min.css';
 import App from './App.vue';
 import router from './router'
 import store from './store/index'

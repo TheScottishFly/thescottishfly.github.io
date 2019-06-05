@@ -2,17 +2,17 @@
   <div v-if="!logoCenter" class="flex flex-row w-full" :class="[bgApp === 'white' ? 'text-bluec' : 'text-gray-300', tempAbsolute ? 'absolute top-0' : '']">
     <div class="md:flex hidden flex-row w-full items-center justify-center h-40 text-lg font-light">
       <div class="flex flex-row mr-16">
-        <router-link to="/" v-if="!logoCenter" class="text-center animated bounceIn mx-3" style="animation-delay: 2.25s;"><span data-hover="Qui je suis">Qui je suis</span></router-link>
-        <router-link to="/portfolio" v-if="!logoCenter" class="text-center animated bounceIn mx-3" style="animation-delay: 2.5s;"><span data-hover="Ce que je sais faire">Ce que je sais faire</span></router-link>
+        <router-link to="/" v-if="!logoCenter" :class="[$store.getters.getIntro ? 'animated bounceIn': '']" class="text-center mx-3" style="animation-delay: 2.25s;"><span data-hover="Qui je suis">Qui je suis</span></router-link>
+        <router-link to="/" v-if="!logoCenter" :class="[$store.getters.getIntro ? 'animated bounceIn': '']" class="text-center mx-3" style="animation-delay: 2.5s;"><span data-hover="Ce que je sais faire">Ce que je sais faire</span></router-link>
       </div>
-      <img v-if="!logoCenter" id="logo-top" alt="Freelance Django/Vue.js Lyon - Logo" src="../assets/img/logo.png" class="h-32 animated fadeInDown" style="animation-duration: 1s; animation-delay: 1s;">
+      <img v-if="!logoCenter" id="logo-top" alt="Freelance Django/Vue.js Lyon - Logo" src="../assets/img/logo.png" :class="[$store.getters.getIntro ? 'animated fadeInDown': '']" class="h-32" style="animation-duration: 1s; animation-delay: 1s;">
       <div class="flex flex-row ml-16">
-        <router-link to="/" v-if="!logoCenter" class="text-center animated bounceIn mx-3" style="animation-delay: 2.75s;"><span data-hover="Ce que j'ai fais">Ce que j'ai fais</span></router-link>
-        <router-link to="/" v-if="!logoCenter" class="text-center animated bounceIn mx-3" style="animation-delay: 3s;"><span data-hover="Me contacter">Me contacter</span></router-link>
+        <router-link to="/portfolio" v-if="!logoCenter" :class="[$store.getters.getIntro ? 'animated bounceIn': '']" class="text-center mx-3" style="animation-delay: 2.75s;"><span data-hover="Ce que j'ai fais">Ce que j'ai fais</span></router-link>
+        <router-link to="/" v-if="!logoCenter" :class="[$store.getters.getIntro ? 'animated bounceIn': '']" class="text-center mx-3" style="animation-delay: 3s;"><span data-hover="Me contacter">Me contacter</span></router-link>
       </div>
     </div>
     <div class="md:hidden flex flex-row w-full items-center justify-between h-32 px-4 text-lg font-light">
-      <img v-if="!logoCenter" id="logo-top" alt="Freelance Django/Vue.js Lyon - Logo" src="../assets/img/logo.png" class="z-50 h-24 animated fadeInDown" style="animation-duration: 1s; animation-delay: 1s;">
+      <img v-if="!logoCenter" id="logo-top" alt="Freelance Django/Vue.js Lyon - Logo" src="../assets/img/logo.png" :class="[$store.getters.getIntro ? 'animated fadeInDown': '']" class="z-50 h-24" style="animation-duration: 1s; animation-delay: 1s;">
       <div class="flex flex-row">
         <p @click="hamburgerMenu = !hamburgerMenu" v-if="!tempAbsolute" :class="[bgApp === 'white' ? 'text-bluec' : 'text-corail']" class="z-50 animated fadeInRight cursor-pointer text-3xl">&#9776;</p>
       </div>
@@ -20,8 +20,8 @@
     <transition v-if="hamburgerMenu" enter-active-class="animated fadeIn" leave-active-class="animated fadeOutRight">
       <div class="flex flex-col bg-white text-bluec items-center justify-center text-xl w-full min-h-screen absolute top-0 right-0 bottom-0 bg-white animated fadeInRight">
         <router-link to="/" v-if="!logoCenter" class="text-center m-2"><span data-hover="Qui je suis">Qui je suis</span></router-link>
-        <router-link to="/portfolio" v-if="!logoCenter" class="text-center m-2"><span data-hover="Ce que je sais faire">Ce que je sais faire</span></router-link>
-        <router-link to="/" v-if="!logoCenter" class="text-center m-2"><span data-hover="Ce que j'ai fais">Ce que j'ai fais</span></router-link>
+        <router-link to="/" v-if="!logoCenter" class="text-center m-2"><span data-hover="Ce que je sais faire">Ce que je sais faire</span></router-link>
+        <router-link to="/portfolio" v-if="!logoCenter" class="text-center m-2"><span data-hover="Ce que j'ai fais">Ce que j'ai fais</span></router-link>
         <router-link to="/" v-if="!logoCenter" class="text-center m-2"><span data-hover="Me contacter">Me contacter</span></router-link>
       </div>
     </transition>
@@ -39,16 +39,22 @@
         bgApp: 'blue'
       };
     },
-    beforeCreate: function () {
-      setTimeout(() => {
+    mounted: function () {
+      if (this.$store.getters.getIntro && window.location.pathname === '/') {
+        setTimeout(() => {
+          this.$data.logoCenter = false;
+        }, 2000);
+        setTimeout(() => {
+          this.$data.tempAbsolute = false;
+        }, 3500);
+        setTimeout(() => {
+          this.$data.bgApp = 'white';
+        }, 42750);
+      } else {
         this.$data.logoCenter = false;
-      }, 2000);
-      setTimeout(() => {
         this.$data.tempAbsolute = false;
-      }, 3500);
-      setTimeout(() => {
         this.$data.bgApp = 'white';
-      }, 42750);
+      }
     }
   };
 </script>

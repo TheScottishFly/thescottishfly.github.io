@@ -4,7 +4,9 @@
       <img alt="Freelance Django/Vue.js Lyon - Logo" src="./assets/img/logo.png" class="h-64 animated zoomIn bg-transparent" style="animation-duration: 1s; animation-delay: 0.2s;">
     </transition>
     <Navbar></Navbar>
-    <router-view></router-view>
+    <transition name="fade" :duration="{ enter: 1500, leave: 250 }">
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 
@@ -18,25 +20,31 @@ export default {
   },
   data: function () {
     return {
-      logoCenter: true,
+      logoCenter: this.$store.getters.getIntro && window.location.pathname === '/',
       classApp: true,
       bgApp: 'white',
       step: 'home',
     };
   },
-  beforeCreate: function () {
-    setTimeout(() => {
+  mounted: function () {
+    if (this.$store.getters.getIntro && window.location.pathname === '/') {
+      setTimeout(() => {
+        this.$data.logoCenter = false;
+      }, 2000);
+      setTimeout(() => {
+        this.$data.bgApp = 'blue';
+      }, 2800);
+      setTimeout(() => {
+        this.$data.classApp = false;
+      }, 3200);
+      setTimeout(() => {
+        this.$data.bgApp = 'white';
+      }, 42750);
+    } else {
       this.$data.logoCenter = false;
-    }, 2000);
-    setTimeout(() => {
-      this.$data.bgApp = 'blue';
-    }, 2800);
-    setTimeout(() => {
-      this.$data.classApp = false;
-    }, 3200);
-    setTimeout(() => {
       this.$data.bgApp = 'white';
-    }, 42750);
+      this.$data.classApp = false;
+    }
   }
 };
 </script>

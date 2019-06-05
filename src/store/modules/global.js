@@ -3,13 +3,13 @@ export default {
     introduction: true
   },
   getters: {
-    skipIntro: state => {
-      return !state.introduction;
+    getIntro: state => {
+      return state.introduction;
     }
   },
   mutations: {
     finishIntro (state) {
-      state.introduction = !state.introduction;
+      state.introduction = false;
     }
   },
   actions: {

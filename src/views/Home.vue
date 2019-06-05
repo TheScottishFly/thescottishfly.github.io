@@ -1,7 +1,7 @@
 <template>
   <div v-if="home" id="home" class="flex flex-col items-center justify-center w-full h-full pt-20" style="min-height: calc(100vh - 20rem); height: calc(100vh - 20rem);">
     <transition v-if="typed" enter-active-class="animated fadeIn" leave-active-class="animated bounceOutRight">
-      <vue-typed-js class="text-white sm:text-xl text-lg sm:p-0 p-4 text-center" v-if="strings.length > 0" :strings="strings" :loop="false" :contentType="'html'" :typeSpeed="35" :backSpeed="10" :startDelay="1000">
+      <vue-typed-js class="text-white sm:text-xl text-lg sm:p-0 p-4 text-center" v-if="strings.length > 0" :strings="strings" :loop="false" :contentType="'html'" :typeSpeed="35" :backSpeed="8" :startDelay="1000">
         <h2 class="typing"></h2>
       </vue-typed-js>
     </transition>
@@ -9,6 +9,8 @@
 </template>
 
 <script>
+  import { mapMutations } from 'vuex'
+
   export default {
     name: "Home",
     data: function () {
@@ -27,15 +29,26 @@
         ]
       };
     },
+    methods: {
+      ...mapMutations([
+        'finishIntro'
+      ]),
+    },
     mounted: function () {
-      setTimeout(() => {
-        this.$data.typed = true;
-        this.$data.home = true;
-      }, 5500);
-      setTimeout(() => {
+      if (this.$store.getters.getIntro) {
+        setTimeout(() => {
+          this.$data.typed = true;
+          this.$data.home = true;
+          this.finishIntro();
+        }, 5500);
+        setTimeout(() => {
+          this.$data.typed = false;
+          this.$data.strings = [];
+        }, 42000);
+      } else {
         this.$data.typed = false;
         this.$data.strings = [];
-      }, 42000);
+      }
     }
   }
 </script>
