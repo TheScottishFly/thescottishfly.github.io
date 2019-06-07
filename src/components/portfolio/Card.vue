@@ -6,13 +6,13 @@
           <div class="w-full rounded-t-lg p-6" style="background-color: #8a4f52;">
             <h1 class="text-lg text-white">gilianrosnet.fr</h1>
           </div>
-          <div class="bg-white p-6 text-gray-800">
+          <div class="middle bg-white p-6 text-gray-800">
             <p class="text-lg"><span class="font-semibold">Site professionel</span></p>
             <p>Vue.js - Javascript - HTML - CSS</p>
             <p class="text-sm font-light">Déploiement sur Github-pages - SEO</p>
             <blockquote class="flex flex-col p-4 md:mt-4 mt-0 font-light">
               <p>
-                Développement d'un site serverless au moyen de Vue.js (framework Front-end Javascript) et de Github-pages, solution d'hébergement de site statique.
+                Développement d'un site serverless avec Vue.js (framework Front-end Javascript) et Github-pages, solution d'hébergement de site statique.
               </p>
               <p>Définition et mise en place d'une stratégie SEO.</p>
             </blockquote>
@@ -29,7 +29,7 @@
           <div class="w-full bg-blue-700 rounded-t-lg p-6">
             <h1 class="text-lg text-white">Conformitee</h1>
           </div>
-          <div class="bg-white p-6 text-gray-800">
+          <div class="middle bg-white p-6 text-gray-800">
             <p class="text-lg"><span class="font-semibold">Prototype</span> - <span class="font-light text-base">Full remote</span></p>
             <p>Django - Python - HTML - CSS</p>
             <blockquote class="flex flex-col p-4 md:mt-4 mt-0 font-light italic" cite="https://www.malt.fr/profile/gilianrosnetboutinet#profileMissions">
@@ -52,13 +52,14 @@
           <div class="w-full bg-black rounded-t-lg p-6">
             <h1 class="text-lg text-white">ImmoService</h1>
           </div>
-          <div class="bg-white p-6 text-gray-800">
+          <div class="middle bg-white p-6 text-gray-800">
             <p class="text-lg"><span class="font-semibold">Prototype</span> - <span class="font-light text-base">Projet entrepreneurial</span></p>
             <p>Django - Python - Node.js - OpenLayer - Open Data</p>
-            <blockquote class="flex flex-col p-4 md:mt-4 mt-0 font-light italic" cite="https://www.malt.fr/profile/gilianrosnetboutinet#profileMissions">
+            <blockquote class="flex flex-col p-4 md:mt-4 mt-0 font-light">
               <p>
-                Mission en renfort pour le développement d'un prototype, avec échéances strictes. Gilian a démontré une excellente capacité à comprendre les enjeux et l'existant, intégrer les pratiques, tout en apportant expertise et conseil dès le premier jour. Une grande autonomie alliée à un reporting proactif, c'est un cocktail gagnant. Je recommande !
+                Le Big Data au service de nos partenaires.
               </p>
+              <p>ImmoService </p>
             </blockquote>
           </div>
           <div class="flex flex-row justify-between w-full bg-gray-100 rounded-b-lg py-6 px-10">
@@ -74,7 +75,7 @@
           <div class="w-full bg-corail rounded-t-lg p-6">
             <h1 class="text-lg text-white">Hopes</h1>
           </div>
-          <div class="bg-white p-6 text-gray-800">
+          <div class="middle bg-white p-6 text-gray-800">
             <p class="text-lg"><span class="font-semibold">Prototype</span> - <span class="font-light text-base">Projet entrepreneurial</span></p>
             <p>Django - Python - Vue.js - Javascript</p>
             <blockquote class="flex flex-col p-4 md:mt-4 mt-0 font-light italic" cite="https://www.malt.fr/profile/gilianrosnetboutinet#profileMissions">
@@ -96,7 +97,7 @@
           <div class="w-full bg-purple-600 rounded-t-lg p-6">
             <h1 class="text-lg text-white">Lali Wildfire</h1>
           </div>
-          <div class="bg-white p-6 text-gray-800">
+          <div class="middle bg-white p-6 text-gray-800">
             <p class="text-lg"><span class="font-semibold">Prototype</span> - <span class="font-light text-base">Full remote</span></p>
             <p>Python - Node.js - Sigfox (IOT) - MapBox</p>
             <blockquote class="flex flex-col p-4 md:mt-4 mt-0 font-light italic" cite="https://www.malt.fr/profile/gilianrosnetboutinet#profileMissions">
@@ -111,7 +112,6 @@
         </div>
       </div>
     </transition>
-
   </div>
 </template>
 
@@ -127,6 +127,9 @@
 </script>
 
 <style lang="stylus">
-.card div
-  transition: box-shadow 0.2s ease !important
+.card
+  div
+    transition: box-shadow 0.2s ease !important
+  .middle
+    min-height: 25rem
 </style>
