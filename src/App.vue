@@ -4,7 +4,7 @@
       <img alt="Freelance Django/Vue.js Lyon - Logo" src="./assets/img/logo.png" class="h-64 animated zoomIn bg-transparent" style="animation-duration: 1s; animation-delay: 0.2s;">
     </transition>
     <Navbar></Navbar>
-    <transition name="fade" :duration="{ enter: 1500, leave: 250 }">
+    <transition name="fade" mode="out-in">
       <router-view></router-view>
     </transition>
   </div>
