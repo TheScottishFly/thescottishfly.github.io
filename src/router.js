@@ -12,9 +12,19 @@ export default new Router({
       component: () => import('./views/Home.vue'),
     },
     {
+      path: '/skills',
+      name: 'skills',
+      component: () => import('./views/Skills.vue'),
+    },
+    {
       path: '/portfolio',
       name: 'portfolio',
       component: () => import('./views/Portfolio.vue'),
     },
+    {
+      path: '/contact',
+      name: 'contact',
+      component: () => import('./views/Contact.vue'),
+    }
   ],
 });
