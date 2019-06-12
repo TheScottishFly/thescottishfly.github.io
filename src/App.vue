@@ -1,10 +1,10 @@
 <template>
-  <div id="app" class="flex flex-col w-full min-h-screen h-full" :class="[this.getBgApp() === 'white' ? 'bg-white-app' : 'bg-blue-app', classApp ? 'items-center justify-center' : '']">
+  <div id="app" class="flex flex-col w-full min-h-screen h-full overflow-x-hidden" :class="[this.getBgApp() === 'white' ? 'bg-white-app' : 'bg-blue-app', classApp ? 'items-center justify-center' : '']">
     <transition v-if="logoCenter" enter-active-class="animated zoomIn" leave-active-class="animated zoomOutDown">
       <img alt="Freelance Django/Vue.js Lyon - Logo" src="./assets/img/logo.png" class="h-64 animated zoomIn bg-transparent" style="animation-duration: 1s; animation-delay: 0.2s;">
     </transition>
     <Navbar></Navbar>
-    <transition name="fade" mode="out-in">
+    <transition enter-active-class="animated bounceInLeft" leave-active-class="animated bounceOutRight" mode="out-in">
       <router-view></router-view>
     </transition>
   </div>

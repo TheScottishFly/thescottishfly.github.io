@@ -1,11 +1,11 @@
 <template>
   <div id="home" v-if="this.getIntro() === false" class="flex flex-col items-center justify-center w-full h-full lg:pt-24 sm:pt-12 pt-4" style="min-height: calc(100vh - 20rem); height: calc(100vh - 20rem);">
-    <transition v-if="this.getTyped()" enter-active-class="animated fadeIn" leave-active-class="animated bounceOutRight" mode="out-in">
+    <transition v-if="this.getTyped()" enter-active-class="animated bounceInLeft" leave-active-class="animated bounceOutRight" mode="out-in">
       <vue-typed-js class="text-white sm:text-xl text-lg sm:p-0 p-4 text-center" v-if="strings.length > 0" :strings="strings" :loop="false" :contentType="'html'" :typeSpeed="35" :backSpeed="8" :startDelay="1000">
         <h2 class="typing"></h2>
       </vue-typed-js>
     </transition>
-    <transition v-if="this.getTyped() === false" enter-active-class="animated fadeIn" leave-active-class="animated bounceOutRight" :delay="5000" mode="out-in">
+    <transition v-if="this.getTyped() === false" enter-active-class="animated bounceInLeft" leave-active-class="animated bounceOutRight" mode="out-in">
       <div class="flex flex-col lg:w-2/3 sm:w-5/6 w-full h-full">
         <div class="flex flex-col items-center justify-center w-full font-light">
           <div class="flex flex-col justify-center text-justify lg:w-2/3 w-5/6 h-full p-4 mb-6">
