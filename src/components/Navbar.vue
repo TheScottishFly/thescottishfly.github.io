@@ -1,14 +1,14 @@
 <template>
-  <div v-if="!logoCenter" class="flex flex-row w-full" :class="[bgApp === 'white' ? 'text-bluec' : 'text-gray-300', tempAbsolute ? 'absolute top-0' : '']">
+  <div v-if="!logoCenter" class="flex flex-row w-full" :class="[this.getBgApp() === 'white' ? 'text-bluec' : 'text-gray-300', tempAbsolute ? 'absolute top-0' : '']">
     <div class="md:flex hidden flex-row w-full items-center justify-center h-40 text-lg font-light">
       <div class="flex flex-row mr-16">
-        <router-link to="/" v-if="!logoCenter" :class="[$store.getters.getIntro ? 'animated bounceIn': '']" class="text-center mx-3" style="animation-delay: 2.25s;"><span data-hover="Qui je suis">Qui je suis</span></router-link>
-        <router-link to="/skills" v-if="!logoCenter" :class="[$store.getters.getIntro ? 'animated bounceIn': '']" class="text-center mx-3" style="animation-delay: 2.5s;"><span data-hover="Ce que je sais faire">Ce que je sais faire</span></router-link>
+        <router-link to="/" @click.native="bgAppAfterClick" v-if="!logoCenter" :class="[$store.getters.getIntro ? 'animated bounceIn': '']" class="text-center mx-3" style="animation-delay: 2.25s;"><span data-hover="Qui je suis">Qui je suis</span></router-link>
+        <router-link to="/skills" @click.native="bgAppAfterClick" v-if="!logoCenter" :class="[$store.getters.getIntro ? 'animated bounceIn': '']" class="text-center mx-3" style="animation-delay: 2.5s;"><span data-hover="Ce que je sais faire">Ce que je sais faire</span></router-link>
       </div>
       <img v-if="!logoCenter" id="logo-top" alt="Freelance Django/Vue.js Lyon - Logo" src="../assets/img/logo.png" :class="[$store.getters.getIntro ? 'animated fadeInDown': '']" class="h-32" style="animation-duration: 1s; animation-delay: 1s;">
       <div class="flex flex-row ml-16">
-        <router-link to="/portfolio" v-if="!logoCenter" :class="[$store.getters.getIntro ? 'animated bounceIn': '']" class="text-center mx-3" style="animation-delay: 2.75s;"><span data-hover="Ce que j'ai fais">Ce que j'ai fais</span></router-link>
-        <router-link to="/contact" v-if="!logoCenter" :class="[$store.getters.getIntro ? 'animated bounceIn': '']" class="text-center mx-3" style="animation-delay: 3s;"><span data-hover="Me contacter">Me contacter</span></router-link>
+        <router-link to="/portfolio" @click.native="bgAppAfterClick" v-if="!logoCenter" :class="[$store.getters.getIntro ? 'animated bounceIn': '']" class="text-center mx-3" style="animation-delay: 2.75s;"><span data-hover="Ce que j'ai fais">Ce que j'ai fais</span></router-link>
+        <router-link to="/contact" @click.native="bgAppAfterClick" v-if="!logoCenter" :class="[$store.getters.getIntro ? 'animated bounceIn': '']" class="text-center mx-3" style="animation-delay: 3s;"><span data-hover="Me contacter">Me contacter</span></router-link>
       </div>
     </div>
     <div class="md:hidden flex flex-row w-full items-center justify-between h-32 px-4 text-lg font-light">
@@ -19,16 +19,18 @@
     </div>
     <transition v-if="hamburgerMenu" enter-active-class="animated fadeIn" leave-active-class="animated fadeOutRight">
       <div class="flex flex-col bg-white text-bluec items-center justify-center text-xl w-full min-h-screen absolute top-0 right-0 bottom-0 bg-white animated fadeInRight">
-        <router-link to="/" v-if="!logoCenter" class="text-center m-2"><span data-hover="Qui je suis">Qui je suis</span></router-link>
-        <router-link to="/skills" v-if="!logoCenter" class="text-center m-2"><span data-hover="Ce que je sais faire">Ce que je sais faire</span></router-link>
-        <router-link to="/portfolio" v-if="!logoCenter" class="text-center m-2"><span data-hover="Ce que j'ai fais">Ce que j'ai fais</span></router-link>
-        <router-link to="/contact" v-if="!logoCenter" class="text-center m-2"><span data-hover="Me contacter">Me contacter</span></router-link>
+        <router-link to="/" @click.native="bgAppAfterClick" v-if="!logoCenter" class="text-center m-2"><span data-hover="Qui je suis">Qui je suis</span></router-link>
+        <router-link to="/skills" @click.native="bgAppAfterClick" v-if="!logoCenter" class="text-center m-2"><span data-hover="Ce que je sais faire">Ce que je sais faire</span></router-link>
+        <router-link to="/portfolio" @click.native="bgAppAfterClick" v-if="!logoCenter" class="text-center m-2"><span data-hover="Ce que j'ai fais">Ce que j'ai fais</span></router-link>
+        <router-link to="/contact" @click.native="bgAppAfterClick" v-if="!logoCenter" class="text-center m-2"><span data-hover="Me contacter">Me contacter</span></router-link>
       </div>
     </transition>
   </div>
 </template>
 
 <script>
+  import { mapGetters, mapMutations } from 'vuex'
+
   export default {
     name: 'Navbar',
     data: function () {
@@ -36,7 +38,6 @@
         logoCenter: true,
         tempAbsolute: true,
         hamburgerMenu: false,
-        bgApp: 'blue'
       };
     },
     mounted: function () {
@@ -47,13 +48,23 @@
         setTimeout(() => {
           this.$data.tempAbsolute = false;
         }, 3500);
-        setTimeout(() => {
-          this.$data.bgApp = 'white';
-        }, 42750);
       } else {
         this.$data.logoCenter = false;
         this.$data.tempAbsolute = false;
-        this.$data.bgApp = 'white';
+        this.changeBgApp('white');
+      }
+    },
+    methods: {
+      ...mapGetters([
+        'getBgApp'
+      ]),
+      ...mapMutations([
+        'changeBgApp',
+        'changeTyped'
+      ]),
+      bgAppAfterClick() {
+        this.changeTyped();
+        this.changeBgApp('white');
       }
     }
   };

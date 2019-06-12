@@ -9,5 +9,6 @@ export default new Vuex.Store({
   plugins: [createPersistedState()],
   modules: {
     global
-  }
+  },
+  strict: true
 })

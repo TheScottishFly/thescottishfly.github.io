@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="flex flex-col w-full min-h-screen h-full" :class="[bgApp === 'white' ? 'bg-white-app' : 'bg-blue-app', classApp ? 'items-center justify-center' : '']">
+  <div id="app" class="flex flex-col w-full min-h-screen h-full" :class="[this.getBgApp() === 'white' ? 'bg-white-app' : 'bg-blue-app', classApp ? 'items-center justify-center' : '']">
     <transition v-if="logoCenter" enter-active-class="animated zoomIn" leave-active-class="animated zoomOutDown">
       <img alt="Freelance Django/Vue.js Lyon - Logo" src="./assets/img/logo.png" class="h-64 animated zoomIn bg-transparent" style="animation-duration: 1s; animation-delay: 0.2s;">
     </transition>
@@ -12,6 +12,7 @@
 
 <script>
 import Navbar from './components/Navbar.vue';
+import { mapGetters, mapMutations } from 'vuex'
 
 export default {
   name: 'app',
@@ -22,29 +23,37 @@ export default {
     return {
       logoCenter: this.$store.getters.getIntro && window.location.pathname === '/',
       classApp: true,
-      bgApp: 'white',
       step: 'home',
     };
   },
+
   mounted: function () {
     if (this.$store.getters.getIntro && window.location.pathname === '/') {
       setTimeout(() => {
         this.$data.logoCenter = false;
       }, 2000);
       setTimeout(() => {
-        this.$data.bgApp = 'blue';
+        this.changeBgApp('blue');
       }, 2800);
       setTimeout(() => {
         this.$data.classApp = false;
       }, 3200);
       setTimeout(() => {
-        this.$data.bgApp = 'white';
+        this.changeBgApp('white');
       }, 42750);
     } else {
       this.$data.logoCenter = false;
-      this.$data.bgApp = 'white';
+      this.changeBgApp('white');
       this.$data.classApp = false;
     }
+  },
+  methods: {
+    ...mapGetters([
+      'getBgApp'
+    ]),
+    ...mapMutations([
+      'changeBgApp'
+    ]),
   }
 };
 </script>
