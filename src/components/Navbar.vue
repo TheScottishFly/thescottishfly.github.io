@@ -18,7 +18,7 @@
       </div>
     </div>
     <transition v-if="hamburgerMenu" enter-active-class="animated fadeIn" leave-active-class="animated zoomOut">
-      <div class="flex flex-col bg-white text-bluec items-center justify-center text-xl w-full min-h-screen absolute top-0 right-0 bottom-0 z-50 bg-white animated fadeInRight">
+      <div class="flex flex-col bg-white text-bluec items-center justify-center text-xl w-full min-h-screen absolute top-0 right-0 bottom-0 z-40 bg-white animated fadeInRight">
         <router-link to="/" @click.native="bgAppAfterClick" v-if="!logoCenter" class="text-center m-2"><span data-hover="Qui je suis">Qui je suis</span></router-link>
         <router-link to="/skills" @click.native="bgAppAfterClick" v-if="!logoCenter" class="text-center m-2"><span data-hover="Ce que je sais faire">Ce que je sais faire</span></router-link>
         <router-link to="/portfolio" @click.native="bgAppAfterClick" v-if="!logoCenter" class="text-center m-2"><span data-hover="Ce que j'ai fais">Ce que j'ai fais</span></router-link>
