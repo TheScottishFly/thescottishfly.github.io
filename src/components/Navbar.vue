@@ -41,7 +41,7 @@
       };
     },
     mounted: function () {
-      if (this.$store.getters.getIntro && window.location.pathname === '/') {
+      if (this.$store.getters.getIntro) {
         setTimeout(() => {
           this.$data.logoCenter = false;
         }, 2000);

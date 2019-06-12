@@ -10,12 +10,14 @@
         <div class="flex flex-col items-center justify-center w-full font-light">
           <div class="flex flex-col justify-center text-justify lg:w-2/3 w-5/6 h-full p-4 mb-6">
             <p class="">Peu adapté au système scolaire classique, on m'a orienté dans le BTP et je suis devenu maçon par défaut.</p>
-            <p>Quatre années sur les chantiers, j'en ai gardé ce besoin de bâtir, ce goût du travail bien fait (sans bonnes fondations, toute chose s'écroule tôt ou tard) et cet immense plaisir d'admirer, une fois terminé, ce qui a été construit.</p>
+            <p>Quatre années sur les chantiers, j'en ai gardé ce besoin de bâtir, ce goût du travail bien fait (sans bonnes fondations, toute chose s'écroule tôt ou tard) et cette joie d'admirer, une fois terminé, ce qui a été construit.</p>
             <p class="mt-4">L'inactivité d'une période de chômage m'a fait rencontrer l'informatique par hasard, et je suis devenu développeur par passion.</p>
             <p>
               Autodidacte, j'ai vécu mes premiers contrats freelance et expériences entrepreneuriales, puis ai (re)pris le chemin de l'école, pour intégrer <a class="text-corail font-semibold" href="https://www.le-101.fr/" target="_blank">Le 101</a>, franchise lyonnaise de l'école <a class="text-gray-500 font-semibold" href="https://www.42.fr/" target="_blank">42</a>.
             </p>
             <p>Après 18 mois de formation et de stages, me revoilà sur les routes du freelancing et de l'entrepreneuriat, activités parallèles à mon statut d'étudiant.</p>
+            <p class="mt-4">Aujourd'hui, je m'épanouis pleinement dans ce que je fais, et prend un immense plaisir à découvrir de nouvelles personnes chaque semaine, et, quand c'est la raison de notre rencontre, à les aider à travers mon expertise à mener leurs projets à leurs termes.</p>
+            <p class="mt-4">Peut-être bientôt le vôtre :)</p>
             <img src="../assets/img/avatar_cadr.png" alt="Photo de profil" class="w-64 self-center mt-12 rounded-lg shadow-lg">
           </div>
         </div>
@@ -57,9 +59,6 @@
     },
     mounted: function () {
       if (this.getTyped()) {
-        setTimeout(() => {
-          this.finishIntro();
-        }, 5500);
         setTimeout(() => {
           this.changeTyped();
           this.$data.strings = [];

@@ -21,7 +21,7 @@ export default {
   },
   data: function () {
     return {
-      logoCenter: this.$store.getters.getIntro && window.location.pathname === '/',
+      logoCenter: this.$store.getters.getIntro,
       classApp: true,
       step: 'home',
     };
@@ -39,8 +39,21 @@ export default {
         this.$data.classApp = false;
       }, 3200);
       setTimeout(() => {
+        this.$store.commit('finishIntro');
+      }, 5500);
+      setTimeout(() => {
         this.changeBgApp('white');
       }, 42750);
+    } else if (this.$store.getters.getIntro) {
+      setTimeout(() => {
+        this.$data.logoCenter = false;
+      }, 2000);
+      setTimeout(() => {
+        this.$data.classApp = false;
+      }, 3200);
+      setTimeout(() => {
+        this.$store.commit('finishIntro');
+      }, 5500);
     } else {
       this.$data.logoCenter = false;
       this.changeBgApp('white');
