@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col w-full h-full">
     <transition v-if="step === 1" enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
-      <div class="card flex flex-row self-center justify-center xl:w-1/2 sm:w-5/6 w-full my-6">
+      <div class="card flex flex-row self-center justify-center xl:w-1/2 sm:w-5/6 w-full mb-6">
         <div class="flex flex-col sm:w-2/3 sm:mx-0 mx-6 h-full bg-white shadow-lg hover:shadow rounded-lg">
           <div class="flex flex-row justify-between text-white w-full rounded-t-lg p-6" style="background-color: #8a4f52;">
             <button class="font-light md:text-xl text-base cursor-default" style="color: #8a4f52;">&#8592;</button>
@@ -26,7 +26,7 @@
       </div>
     </transition>
     <transition v-if="step === 2" enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
-      <div class="card flex flex-row self-center justify-center xl:w-1/2 sm:w-5/6 w-full my-6">
+      <div class="card flex flex-row self-center justify-center xl:w-1/2 sm:w-5/6 w-full mb-6">
         <div class="flex flex-col sm:w-2/3 sm:mx-0 mx-6 h-full bg-white shadow-lg hover:shadow rounded-lg">
           <div class="flex flex-row justify-between text-white w-full bg-blue-700 rounded-t-lg p-6">
             <button class="font-light md:text-xl text-base" @click="step--">&#8592;</button>
@@ -51,7 +51,7 @@
       </div>
     </transition>
     <transition v-if="step === 3" enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
-      <div class="card flex flex-row self-center justify-center xl:w-1/2 sm:w-5/6 w-full my-6">
+      <div class="card flex flex-row self-center justify-center xl:w-1/2 sm:w-5/6 w-full mb-6">
         <div class="flex flex-col sm:w-2/3 sm:mx-0 mx-6 h-full bg-white shadow-lg hover:shadow rounded-lg">
           <div class="flex flex-row justify-between text-white w-full bg-black rounded-t-lg p-6">
             <button class="font-light md:text-xl text-base" @click="step--">&#8592;</button>
@@ -76,7 +76,7 @@
       </div>
     </transition>
     <transition v-if="step === 4" enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
-      <div class="card flex flex-row self-center justify-center xl:w-1/2 sm:w-5/6 w-full my-6">
+      <div class="card flex flex-row self-center justify-center xl:w-1/2 sm:w-5/6 w-full mb-6">
         <div class="flex flex-col sm:w-2/3 sm:mx-0 mx-6 h-full bg-white shadow-lg hover:shadow rounded-lg">
           <div class="flex flex-row justify-between text-white w-full bg-corail rounded-t-lg p-6">
             <button class="font-light md:text-xl text-base" @click="step--">&#8592;</button>
@@ -103,7 +103,7 @@
       </div>
     </transition>
     <transition v-if="step === 5" enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
-      <div class="card flex flex-row self-center justify-center xl:w-1/2 sm:w-5/6 w-full my-6">
+      <div class="card flex flex-row self-center justify-center xl:w-1/2 sm:w-5/6 w-full mb-6">
         <div class="flex flex-col sm:w-2/3 sm:mx-0 mx-6 h-full bg-white shadow-lg hover:shadow rounded-lg">
           <div class="flex flex-row justify-between text-white w-full bg-purple-600 rounded-t-lg p-6">
             <button class="font-light md:text-xl text-base" @click="step--">&#8592;</button>
@@ -130,7 +130,7 @@
       </div>
     </transition>
     <transition v-if="step === 6" enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
-      <div class="card flex flex-row self-center justify-center xl:w-1/2 sm:w-5/6 w-full my-6">
+      <div class="card flex flex-row self-center justify-center xl:w-1/2 sm:w-5/6 w-full mb-6">
         <div class="flex flex-col sm:w-2/3 sm:mx-0 mx-6 h-full bg-white shadow-lg hover:shadow rounded-lg">
           <div class="flex flex-row justify-between text-white w-full bg-yellow-600 rounded-t-lg p-6">
             <button class="font-light md:text-xl text-base" @click="step--">&#8592;</button>

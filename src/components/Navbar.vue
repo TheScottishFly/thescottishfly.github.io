@@ -14,11 +14,11 @@
     <div class="md:hidden flex flex-row w-full items-center justify-between h-32 px-4 text-lg font-light">
       <img v-if="!logoCenter" id="logo-top" alt="Freelance Django/Vue.js Lyon - Logo" src="../assets/img/logo.png" :class="[$store.getters.getIntro ? 'animated fadeInDown': '']" class="z-50 h-24" style="animation-duration: 1s; animation-delay: 1s;">
       <div class="flex flex-row">
-        <p @click="hamburgerMenu = !hamburgerMenu" v-if="!tempAbsolute" :class="[bgApp === 'white' ? 'text-bluec' : 'text-corail']" class="z-50 animated fadeInRight cursor-pointer text-3xl">&#9776;</p>
+        <p @click="hamburgerMenu = !hamburgerMenu" v-if="!tempAbsolute" :class="[this.getBgApp() === 'white' ? 'text-bluec' : 'text-corail']" class="z-50 animated fadeInRight cursor-pointer text-3xl">&#9776;</p>
       </div>
     </div>
-    <transition v-if="hamburgerMenu" enter-active-class="animated fadeIn" leave-active-class="animated fadeOutRight">
-      <div class="flex flex-col bg-white text-bluec items-center justify-center text-xl w-full min-h-screen absolute top-0 right-0 bottom-0 bg-white animated fadeInRight">
+    <transition v-if="hamburgerMenu" enter-active-class="animated fadeIn" leave-active-class="animated zoomOut">
+      <div class="flex flex-col bg-white text-bluec items-center justify-center text-xl w-full min-h-screen absolute top-0 right-0 bottom-0 z-50 bg-white animated fadeInRight">
         <router-link to="/" @click.native="bgAppAfterClick" v-if="!logoCenter" class="text-center m-2"><span data-hover="Qui je suis">Qui je suis</span></router-link>
         <router-link to="/skills" @click.native="bgAppAfterClick" v-if="!logoCenter" class="text-center m-2"><span data-hover="Ce que je sais faire">Ce que je sais faire</span></router-link>
         <router-link to="/portfolio" @click.native="bgAppAfterClick" v-if="!logoCenter" class="text-center m-2"><span data-hover="Ce que j'ai fais">Ce que j'ai fais</span></router-link>
@@ -64,6 +64,7 @@
       ]),
       bgAppAfterClick() {
         this.changeTyped();
+        this.$data.hamburgerMenu = false;
         this.changeBgApp('white');
       }
     }

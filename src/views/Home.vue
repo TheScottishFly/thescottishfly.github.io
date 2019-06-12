@@ -1,5 +1,5 @@
 <template>
-  <div id="home" v-if="this.getIntro() === false" class="flex flex-col items-center justify-center w-full h-full lg:pt-24 sm:pt-12 pt-4" style="min-height: calc(100vh - 20rem); height: calc(100vh - 20rem);">
+  <div id="home" v-if="this.getIntro() === false" class="flex flex-col items-center justify-center w-full h-full pt-12" style="min-height: calc(100vh - 20rem); height: calc(100vh - 20rem);">
     <transition v-if="this.getTyped()" enter-active-class="animated bounceInLeft" leave-active-class="animated bounceOutRight" mode="out-in">
       <vue-typed-js class="text-white sm:text-xl text-lg sm:p-0 p-4 text-center" v-if="strings.length > 0" :strings="strings" :loop="false" :contentType="'html'" :typeSpeed="35" :backSpeed="8" :startDelay="1000">
         <h2 class="typing"></h2>
@@ -9,15 +9,17 @@
       <div class="flex flex-col lg:w-2/3 sm:w-5/6 w-full h-full">
         <div class="flex flex-col items-center justify-center w-full font-light">
           <div class="flex flex-col justify-center text-justify lg:w-2/3 w-5/6 h-full p-4 mb-6">
-            <p class="">Peu adapté au système scolaire classique, on m'a orienté dans le BTP et je suis devenu maçon par défaut.</p>
-            <p>Quatre années sur les chantiers, j'en ai gardé ce besoin de bâtir, ce goût du travail bien fait (sans bonnes fondations, toute chose s'écroule tôt ou tard) et cette joie d'admirer, une fois terminé, ce qui a été construit.</p>
-            <p class="mt-4">L'inactivité d'une période de chômage m'a fait rencontrer l'informatique par hasard, et je suis devenu développeur par passion.</p>
+            <p><strong class="text-orange-500">Entrepreneur</strong>, <strong class="text-blue-500">Freelance</strong> et Étudiant, je profite d'être encore jeune pour accumuler le plus d'expériences possibles.</p>
+            <p>D'avoir une plus grande marge pour faire des erreurs, en tirer des leçons et rebondir.</p>
+            <p class="mt-4">Peu adapté au système scolaire classique, on m'a orienté dans le BTP et je suis devenu maçon par défaut.</p>
+            <p>Quatre années sur les chantiers, j'en ai gardé cette <strong>envie de bâtir</strong>, ce goût du <strong>travail bien fait</strong> (sans bonnes fondations, toute chose s'écroule tôt ou tard) et cette <strong>joie d'admirer</strong>, une fois terminé, ce qui a été construit.</p>
+            <p class="mt-4">L'inactivité d'une période de chômage m'a fait rencontrer l'informatique par hasard, et je suis devenu développeur <strong>par passion</strong>.</p>
             <p>
-              Autodidacte, j'ai vécu mes premiers contrats freelance et expériences entrepreneuriales, puis ai (re)pris le chemin de l'école, pour intégrer <a class="text-corail font-semibold" href="https://www.le-101.fr/" target="_blank">Le 101</a>, franchise lyonnaise de l'école <a class="text-gray-500 font-semibold" href="https://www.42.fr/" target="_blank">42</a>.
+              <strong>Autodidacte</strong>, j'ai vécu mes premiers contrats freelance et expériences entrepreneuriales, puis ai (re)pris le chemin de l'école, pour intégrer <a class="text-red-500 font-semibold" href="https://www.le-101.fr/" target="_blank">Le 101</a>, franchise lyonnaise de l'école <a class="text-gray-600 font-semibold" href="https://www.42.fr/" target="_blank">42</a>.
             </p>
             <p>Après 18 mois de formation et de stages, me revoilà sur les routes du freelancing et de l'entrepreneuriat, activités parallèles à mon statut d'étudiant.</p>
-            <p class="mt-4">Aujourd'hui, je m'épanouis pleinement dans ce que je fais, et prend un immense plaisir à découvrir de nouvelles personnes chaque semaine, et, quand c'est la raison de notre rencontre, à les aider à travers mon expertise à mener leurs projets à leurs termes.</p>
-            <p class="mt-4">Peut-être bientôt le vôtre :)</p>
+            <p class="mt-4">Aujourd'hui, je <strong>m'épanouis pleinement</strong> dans ce que je fais, et prend un <strong>immense plaisir</strong> à découvrir de nouvelles personnes chaque semaine, et, quand c'est la raison de notre rencontre, à les <strong>aider à travers mon expertise</strong> à mener <strong>leurs projets à leurs termes</strong>.</p>
+            <p class="mt-4">Peut-être bientôt <strong>le vôtre</strong> :)</p>
             <img src="../assets/img/avatar_cadr.png" alt="Photo de profil" class="w-64 self-center mt-12 rounded-lg shadow-lg">
           </div>
         </div>

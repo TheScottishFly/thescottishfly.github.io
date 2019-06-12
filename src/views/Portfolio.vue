@@ -1,5 +1,5 @@
 <template>
-  <div v-if="this.getIntro() === false" class="flex flex-col items-center justify-center w-full h-full lg:pt-24 sm:pt-12 pt-4">
+  <div v-if="this.getIntro() === false" class="flex flex-col items-center justify-center w-full h-full pt-12">
     <Card></Card>
   </div>
 </template>
