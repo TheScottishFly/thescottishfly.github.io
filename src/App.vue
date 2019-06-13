@@ -57,6 +57,7 @@ export default {
     } else {
       this.$data.logoCenter = false;
       this.changeBgApp('white');
+      this.changeTyped();
       this.$data.classApp = false;
     }
   },
@@ -65,7 +66,8 @@ export default {
       'getBgApp'
     ]),
     ...mapMutations([
-      'changeBgApp'
+      'changeBgApp',
+      'changeTyped'
     ]),
   }
 };

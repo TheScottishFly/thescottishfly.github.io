@@ -1,11 +1,11 @@
 <template>
   <div v-if="this.getIntro() === false" class="flex flex-col items-center justify-center w-full h-full pt-12">
-    <transition v-if="this.getTyped()" enter-active-class="animated bounceInLeft" leave-active-class="animated bounceOutRight" mode="out-in">
+    <transition v-if="this.getTyped() && this.getBgApp() === 'blue'" enter-active-class="animated bounceInLeft" leave-active-class="animated bounceOutRight" mode="out-in">
       <vue-typed-js class="text-white sm:text-xl text-lg sm:p-0 p-4 text-center md:mt-64 sm:mt-48 mt-24" v-if="strings.length > 0" :strings="strings" :loop="false" :contentType="'html'" :typeSpeed="35" :backSpeed="8" :startDelay="1000">
         <h2 class="typing"></h2>
       </vue-typed-js>
     </transition>
-    <transition v-if="this.getTyped() === false" enter-active-class="animated bounceInLeft" leave-active-class="animated bounceOutRight" mode="out-in">
+    <transition v-if="this.getTyped() === false || this.getBgApp() === 'white'" enter-active-class="animated bounceInLeft" leave-active-class="animated bounceOutRight" mode="out-in">
       <div class="flex flex-col lg:w-2/3 sm:w-5/6 w-full h-full">
         <div class="flex flex-col items-center justify-center w-full font-light">
           <div class="flex flex-col justify-center text-justify lg:w-2/3 w-5/6 h-full p-4 mb-6">
