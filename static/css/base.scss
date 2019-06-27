@@ -1,0 +1,45 @@
+html, body {
+  min-width: 320px !important;
+}
+
+#content {
+  .hover-link {
+    transition: opacity 0.2s ease;
+  }
+  .hover-link:hover {
+    opacity: 0.5 !important;
+  }
+}
+
+$colors:  (
+  "corail": #FA7268,
+  "gold": #F8B75D,
+  "beige": #DCCB92,
+  "tealc": #58B199,
+  "bluec": #065471
+);
+
+button, a {
+  transition: box-shadow 0.2s;
+}
+
+.small-caps {
+  font-variant: small-caps;
+}
+
+@each $key, $value in $colors {
+  .text-#{$key} {
+    color: $value;
+  }
+  .bg-#{$key} {
+    background-color: $value;
+  }
+  .border-#{$key} {
+    border-color: $value;
+  }
+
+}
+
+.h-c-screen {
+  height: 65vh;
+}
